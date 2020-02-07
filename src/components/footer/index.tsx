@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 // Constants
 import { SITE_NAME } from '../../settings';
+import footerImage from '../../images/footer.png';
 
 // Components
 import {
@@ -29,6 +30,7 @@ import {
 	TOS_ROUTE,
 	REFUNDS_ROUTE,
 	PRIVACY_ROUTE,
+	SITEMAP_ROUTE,
 	SCROLL_SUPPORT,
 	PRICING_ROUTE
 } from '../../constants';
@@ -106,6 +108,11 @@ class Reviews extends React.Component<Props, State> {
 								url: MEMBERS_URL,
 								native: true
 							}
+							, {
+								label: 'Sitemap',
+								url: SITEMAP_ROUTE,
+								native: true
+							}
 							]}
 						/>
 						<FooterColumn title="Support">
@@ -128,7 +135,7 @@ class Reviews extends React.Component<Props, State> {
 								</li>
 							</ul>
 						</FooterColumn>
-						<img src="http://via.placeholder.com/350x150" alt="" className="footer__logo"/>
+						<img src={footerImage} alt="" className="footer__logo"/>
 					</Row>
 				</Container>
 			</footer>

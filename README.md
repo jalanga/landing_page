@@ -8,6 +8,7 @@ These informations will help you customize and deploy your own landing page !
 - follow onscreen instructions:
     - Connect to GitHub - **log in** with you GitHub account
     - Configure your site - change the repository name if you want
+    - Ensure that the build command is set, navigate to **Site Settings** than **Build & Deploy**, on the right **Biuld command** should be **gatsby build** and **Publish directory** should be **public/**. If you make this changes navigate to **Deploys** and click on **Trigger deploy**
     - wait until your site is deployed
     - click **Set up a custom domain**
     - click **Secure your site with HTTPS**
@@ -26,6 +27,8 @@ These informations will help you customize and deploy your own landing page !
     - for the best result, try to use an image with almost the same size as the original one (*1645x1398*) and transparent background.
 - you can also change the favicon from `src/images/icon.png` - this is also used on mobile phones as an icon.
     - make sure that the image is big enough and square formatted, so that the quality is good everywhere.
+- for footer image (the image that appears on the bottom of the page, replace the next new image from `src/images/footer.png`.
+    - for the best result, try to use an image with almost the same size as the original one (*350x150*).
 
 ### :rainbow: Edit site colors
 - open file from `src/styles/modules/_variables.scss` and edit the variables as follows:
@@ -49,6 +52,10 @@ These informations will help you customize and deploy your own landing page !
     - **$reviews-bg-color** - background color for reviews bubbles
     - *... more details in the file*
 
+### :hammer: Add Sitemap for SEO
+- open file from `gatsby-config.js` and edit the following constant:
+    - **THIS_SITE_DOMAIN** - the current domain name of this site
+
 ### :hammer: Change site settings
 - open file from `src/settings.js` and edit the constants as follows:
     - **MEMBERS_URL** - your domain url
@@ -70,3 +77,15 @@ These informations will help you customize and deploy your own landing page !
 - save the settings and copy the chat link from **Widget Code**. It should look similar to this one `https://embed.tawk.to/5be5f1470ff598a7a61dba7/default`
 - in `src/settings.js` paste the new link in **TAWK_TO_WIDGET_URL** constant
 - you can now receive messages in the chat. You will find all your messages under the **Messages** menu
+
+### :hammer: Update your landing page with the newest changes
+- install git
+- clone your repository in your local machine `git clone "github_url"`
+- go to the project's folder on your local machine
+- run the following commands in terminal:
+```
+git remote add upstream https://github.com/drsoftsrl/landing_page
+git fetch upstream
+git pull --rebase upstream master
+git push origin master
+```
